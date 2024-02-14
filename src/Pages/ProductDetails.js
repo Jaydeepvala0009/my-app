@@ -22,18 +22,22 @@ const ProductDetails = () => {
 
   useEffect(() => {
     const storedData = JSON.parse(localStorage.getItem("selectedProduct"));
-    const storedDataHome = JSON.parse(
-      localStorage.getItem("selectedProducthome")
-    );
-
-    if (storedData) {
-      setProductData(storedData);
-      setDisplayedImage(storedData.image);
-    } else if (storedDataHome) {
-      setProductData(storedDataHome);
-      setDisplayedImage(storedDataHome.image);
+    const storedDataHome = JSON.parse(localStorage.getItem("selectedProducthome"));
+    const productType = localStorage.getItem("productType");
+  
+    if (productType === "myproduct") {
+      if (storedData) {
+        setProductData(storedData);
+        setDisplayedImage(storedData.image);
+      }
+    } else if (productType === "myproducthome") {
+      if (storedDataHome) {
+        setProductData(storedDataHome);
+        setDisplayedImage(storedDataHome.image);
+      }
     }
   }, []);
+  
 
   const handleColorClick = (color, image) => {
     console.log("Selected color:", color);

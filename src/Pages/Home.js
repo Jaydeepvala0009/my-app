@@ -29,14 +29,9 @@ const Home = () => {
   const handleProductClick = (selectedProduct) => {
     dispatch(setProduct(selectedProduct));
     localStorage.setItem("selectedProducthome", JSON.stringify(selectedProduct));
+    localStorage.setItem("productType","myproducthome");
+
   };
-
-
-
-
-
-
-
 
 
   const [favorites, setFavorites] = useState(

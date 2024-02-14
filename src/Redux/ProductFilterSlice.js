@@ -22,20 +22,21 @@ const productSlice = createSlice({
         filteredProducts = filteredProducts.filter(product =>
           product.variations.some(variation => variation.color === color)
         );
-      }
 
-      if (size) {
         const availableSizes = filteredProducts.flatMap(product =>
-          product.variations.flatMap(variation =>
-            variation.sizes.map(item => item.size)
-          )
+          product.variations
+            .filter(variation => variation.color === color)
+            .flatMap(variation => variation.sizes.map(item => item.size))
         );
-        if (!availableSizes.includes(size)) {
+
+        if (size && !availableSizes.includes(size)) {
           state.filteredProducts = [];
           state.error = true;
           return;
         }
+      }
 
+      if (size) {
         filteredProducts = filteredProducts.filter(product =>
           product.variations.some(variation =>
             variation.sizes.some(item => item.size === size)

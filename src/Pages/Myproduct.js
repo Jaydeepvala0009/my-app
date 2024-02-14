@@ -15,13 +15,10 @@ const Myproduct = ({ match }) => {
   };
 
 
-
-
-
-  
   const handleProductClick = (selectedProduct) => {
     dispatch(setProduct(selectedProduct));
     localStorage.setItem("selectedProduct", JSON.stringify(selectedProduct));
+    localStorage.setItem("productType","myproduct");
   };
 
   return (
