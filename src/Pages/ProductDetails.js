@@ -12,7 +12,6 @@ import {
 
 import { filterProducts } from "../Redux/ProductFilterSlice";
 import { useDispatch } from "react-redux";
-import { Product } from "../Assets/JasonFile";
 
 const ProductDetails = () => {
   const dispatch = useDispatch();
@@ -40,31 +39,11 @@ const ProductDetails = () => {
   
 
   const handleColorClick = (color, image) => {
-    console.log("Selected color:", color);
-    console.log("Selected image:", image);
     setDisplayedImage(image);
     dispatch(filterProducts({ category: null, color }));
   };
 
-  const handleSizeClick = (size, productId) => {
-    console.log("Selected size:", size);
-
-    const currentProduct = Product.find((product) => product.id === productId);
-
-    if (currentProduct && currentProduct.variations) {
-      const isAvailable = currentProduct.variations.some((variation) =>
-        variation.sizes.some((item) => item.size === size)
-      );
-
-      if (!isAvailable) {
-        dispatch(filterProducts({ category: null, size }));
-      } else {
-        alert("This size is not available!");
-      }
-    } else {
-      console.error("Product not found or variations are missing");
-    }
-  };
+  
 
   return (
     <>
@@ -148,24 +127,9 @@ const ProductDetails = () => {
                   <div className="Main-Size-Box">
                     <h5>Sizes</h5>
                     <div className="Sizes-Box">
-                      <button
-                        className="Size-Button"
-                        onClick={() => handleSizeClick("S")}
-                      >
-                        S
-                      </button>
-                      <button
-                        className="Size-Button"
-                        onClick={() => handleSizeClick("M")}
-                      >
-                        M
-                      </button>
-                      <button
-                        className="Size-Button"
-                        onClick={() => handleSizeClick("L")}
-                      >
-                        L
-                      </button>
+                      <button className="Size-Button">S</button>
+                      <button className="Size-Button">M</button>
+                      <button className="Size-Button">L</button>
                     </div>
                   </div>
                   <button className="Button" type="button">

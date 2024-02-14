@@ -66,7 +66,6 @@ export const Product = [
         color: "Brown",
         sizes: [
           { size: "S", image: MenBrown1 },
-          // { size: "M", image: MenBrown1 },
           { size: "L", image: MenBrown1 },
         ],
       },
@@ -74,7 +73,6 @@ export const Product = [
         color: "Black",
         sizes: [
           { size: "S", image: MenBlack2 },
-          // { size: "M", image: MenBlack2 },
           { size: "L", image: MenBlack2 },
         ],
       },
@@ -82,7 +80,6 @@ export const Product = [
         color: "White",
         sizes: [
           { size: "S", image: MenWhite3 },
-          // { size: "M", image: MenWhite3 },
           { size: "L", image: MenWhite3 },
         ],
       },
@@ -253,8 +250,8 @@ export const Product = [
         color: "Orange",
         sizes: [
           { size: "S", image: MenOrangek15 },
-          { size: "S", image: MenOrangek15 },
-          { size: "S", image: MenOrangek15 },
+          { size: "M", image: MenOrangek15 },
+          { size: "L", image: MenOrangek15 },
         ],
       },
     ],

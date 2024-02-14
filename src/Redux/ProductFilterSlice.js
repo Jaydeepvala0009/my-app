@@ -1,5 +1,5 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { Product } from '../Assets/JasonFile/index';
+import { createSlice } from "@reduxjs/toolkit";
+import { Product } from "../Assets/JasonFile/index";
 
 const initialState = {
   products: Product,
@@ -7,7 +7,7 @@ const initialState = {
 };
 
 const productSlice = createSlice({
-  name: 'products',
+  name: "products",
   initialState,
   reducers: {
     filterProducts: (state, action) => {
@@ -15,31 +15,37 @@ const productSlice = createSlice({
       let filteredProducts = state.products;
 
       if (category) {
-        filteredProducts = filteredProducts.filter(product => product.category === category);
+        filteredProducts = filteredProducts.filter(
+          (product) => product.category === category
+        );
       }
-
       if (color) {
-        filteredProducts = filteredProducts.filter(product =>
-          product.variations.some(variation => variation.color === color)
+        filteredProducts = filteredProducts.filter((product) =>
+          product.variations.some((variation) => variation.color === color)
         );
 
-        const availableSizes = filteredProducts.flatMap(product =>
+        const sizesForSelectedColor = filteredProducts.flatMap((product) =>
           product.variations
-            .filter(variation => variation.color === color)
-            .flatMap(variation => variation.sizes.map(item => item.size))
+            .filter((variation) => variation.color === color)
+            .flatMap((variation) => variation.sizes.map((item) => item.size))
         );
+        console.log('sizesForSelectedColor: ', sizesForSelectedColor);
 
-        if (size && !availableSizes.includes(size)) {
-          state.filteredProducts = [];
-          state.error = true;
-          return;
-        }
+
+        const uniqueAvailableSizesForColor = [
+          ...new Set(sizesForSelectedColor),
+        ];
+
+        console.log(
+          "uniqueAvailableSizesForColor: ",
+          uniqueAvailableSizesForColor
+        );
       }
 
       if (size) {
-        filteredProducts = filteredProducts.filter(product =>
-          product.variations.some(variation =>
-            variation.sizes.some(item => item.size === size)
+        filteredProducts = filteredProducts.filter((product) =>
+          product.variations.some((variation) =>
+            variation.sizes.some((item) => item.size === size)
           )
         );
       }
