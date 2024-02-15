@@ -15,7 +15,7 @@ const ProductDetails = () => {
 
   const [productData, setProductData] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
-  const [selectedSize, setSelectedSize] = useState(null);
+  const [SelectedSize, setSelectedSize] = useState(null);
   const [displayedImage, setDisplayedImage] = useState(null);
 
   
