@@ -12,9 +12,9 @@ const cartSlice = createSlice({
   reducers: {
     addToCart(state, action) {
       const newItem = action.payload;
-      const updatedItems = [...state.items, newItem]; // Create a new array with the new item added
-      localStorage.setItem('cartItems', JSON.stringify(updatedItems)); // Update localStorage
-      return { ...state, items: updatedItems }; // Return the updated state
+      const updatedItems = [...state.items, newItem];
+      localStorage.setItem('cartItems', JSON.stringify(updatedItems));
+      return { ...state, items: updatedItems };
     },
     
   },

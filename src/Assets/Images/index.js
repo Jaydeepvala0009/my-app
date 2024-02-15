@@ -1,5 +1,4 @@
 
-// _________ Project Images ___________//
 
 import Bagroungimg1 from "../../AllImages/Banner/img1.jpg";
 import Bagroungimg2 from "../../AllImages/Banner/img2.jpg";
@@ -10,7 +9,6 @@ import Bagroungimg6 from "../../AllImages/Banner/img6.jpg";
 import Bagroungimg7 from "../../AllImages/Banner/img7.jpg";
 import BackFullimg1 from "../../AllImages/Banner/Backimg1.webp";
 
-// Men Product img...............
 import MenBrown1 from "../../AllImages/Men/img1.jpeg";
 import MenBlack2 from "../../AllImages/Men/img2.jpeg";
 import MenWhite3 from "../../AllImages/Men/img3.webp";
@@ -32,7 +30,6 @@ import MenOrange13 from "../../AllImages/Men/img13.webp";
 import MenBlack14 from "../../AllImages/Men/img14.jpeg";
 import MenOrangek15 from "../../AllImages/Men/img15.webp";
 
-// WoMen img...............
 import WomenBrown16 from "../../AllImages/Men/img16.webp";
 import WomenBlack17 from "../../AllImages/Men/img17.webp";
 import WomenWhite18 from "../../AllImages/Men/img18.webp";
@@ -53,7 +50,6 @@ import WomenPink27 from "../../AllImages/Men/img27.webp";
 import WomenOrange28 from "../../AllImages/Men/img28.webp";
 import WomenWhite29 from "../../AllImages/Men/img29.webp";
 
-// WoMen img...............
 import KidsBlue30 from "../../AllImages/Men/img30.webp";
 
 import KidsWhite31 from "../../AllImages/Men/img31.webp";
