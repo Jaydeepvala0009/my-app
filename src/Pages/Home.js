@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setProduct } from "../Redux/ProductSlice";
@@ -9,7 +9,6 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { settings } from "../Assets/ReactMaterial";
 import { Wrapper } from "../Style/Homecss";
-import { IoIosHeart } from "../Assets/Icons/index";
 import {
   BackFullimg1,
   Bagroungimg1,
@@ -20,28 +19,16 @@ import {
   Bagroungimg6,
   Bagroungimg7,
 } from "../Assets/Images/index";
+import FavoriteButton from "../Components/FavButton";
 
 const Home = () => {
   const dispatch = useDispatch();
 
 
-  
   const handleProductClick = (selectedProduct) => {
     dispatch(setProduct(selectedProduct));
-    localStorage.setItem("selectedProducthome", JSON.stringify(selectedProduct));
-    localStorage.setItem("productType","myproducthome");
-
-  };
-
-
-  const [favorites, setFavorites] = useState(
-    JSON.parse(localStorage.getItem("favorites")) || []
-  );
-  const storeData = (product) => {
-    console.log("storeData: ", storeData);
-    const updatedFavorites = [...favorites, product];
-    setFavorites(updatedFavorites);
-    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+    localStorage.setItem("selectedProduct", JSON.stringify(selectedProduct));
+    localStorage.setItem("productType","myproduct");
   };
 
   return (
@@ -247,13 +234,7 @@ const Home = () => {
                       </div>
                     </NavLink>
                     <div className="Favicon">
-                      <i className="" aria-hidden="true">
-                        <IoIosHeart
-                          onClick={(e) => {
-                            storeData(product);
-                          }}
-                        />
-                      </i>
+                      <FavoriteButton product={product}/>
                     </div>
                   </div>
                 ))}

@@ -42,6 +42,9 @@ export const Wrapper = styled.section`
           bottom: 100px;
           left: 10px;
           font-size: 20px;
+          .active{
+            color:red;
+          }
         }
         .navlink-no-decoration {
           text-decoration: none;

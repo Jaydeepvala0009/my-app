@@ -1,12 +1,12 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { IoIosHeart } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
 import { setProduct } from "../Redux/ProductSlice";
 import { filterProducts } from "../Redux/ProductFilterSlice";
+import FavoriteButton from "../Components/FavButton";
 
-const Myproduct = ({ match }) => {
+const Myproduct = () => {
   const dispatch = useDispatch();
 
   const { filteredProducts } = useSelector((state) => state.products);
@@ -14,11 +14,10 @@ const Myproduct = ({ match }) => {
     dispatch(filterProducts({ category }));
   };
 
-
   const handleProductClick = (selectedProduct) => {
     dispatch(setProduct(selectedProduct));
     localStorage.setItem("selectedProduct", JSON.stringify(selectedProduct));
-    localStorage.setItem("productType","myproduct");
+    localStorage.setItem("productType", "myproduct");
   };
 
   return (
@@ -116,13 +115,13 @@ const Myproduct = ({ match }) => {
               <main className="Main-2 col-xl-9">
                 <div className="Section-2 row">
                   {filteredProducts.map((Product) => (
-                    <NavLink
-                      key={Product.id}
-                      to={`/ProductDetails/${Product.id}`}
-                      onClick={() => handleProductClick(Product)}
-                      className="card navlink-no-decoration ml-3"
-                    >
-                      <div>
+                    <div key={Product.id} className="card ml-3">
+                      <NavLink
+                        key={Product.id}
+                        to={`/ProductDetails/${Product.id}`}
+                        onClick={() => handleProductClick(Product)}
+                        className=" navlink-no-decoration ml-3"
+                      >
                         <img
                           src={Product.image}
                           className="card-img-top"
@@ -132,13 +131,11 @@ const Myproduct = ({ match }) => {
                           <h5 className="card-title mt-3">{Product.title}</h5>
                           <p className="card-text m-0">Rs.{Product.price}</p>
                         </div>
-                        <div className="favicon">
-                          <i className="" aria-hidden="true">
-                            <IoIosHeart />
-                          </i>
-                        </div>
+                      </NavLink>
+                      <div className="favicon">
+                        <FavoriteButton product={Product} />
                       </div>
-                    </NavLink>
+                    </div>
                   ))}
                 </div>
               </main>
@@ -183,18 +180,18 @@ export const Wrapper = styled.section`
         .Main-2 {
           .Section-2 {
             gap: 20px;
-            .navlink-no-decoration {
-              text-decoration: none;
-            }
             .card {
               width: 30%;
               border: none;
               list-style: none;
               text-dacoration: none;
+              .navlink-no-decoration {
+                text-decoration: none;
+              }
             }
             .card-img-top {
               width: 100%;
-              height:350px;
+              height: 350px;
             }
             .Card-text {
               text-align: start;

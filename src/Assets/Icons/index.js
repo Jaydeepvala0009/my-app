@@ -11,6 +11,8 @@ import { FaCreditCard } from "react-icons/fa";
 import { AiOutlineShopping } from "react-icons/ai";
 import { FaRegHeart } from "react-icons/fa";
 import { IoSearch } from "react-icons/io5";
+import { MdFavoriteBorder } from "react-icons/md";
+
 
 export {
   IoIosHeart,
@@ -26,4 +28,5 @@ export {
   AiOutlineShopping,
   FaRegHeart,
   IoSearch,
+  MdFavoriteBorder,
 };
