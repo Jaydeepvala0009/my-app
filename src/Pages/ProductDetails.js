@@ -37,7 +37,7 @@ const ProductDetails = () => {
   }, []);
 
   useEffect(() => {
-    if (productData && selectedColor && selectedSize) {
+    if (productData && selectedColor) {
       const selectedVariation = productData.variations.find(
         (variation) => variation.color === selectedColor
       );
@@ -46,13 +46,13 @@ const ProductDetails = () => {
         setDisplayedImage(selectedVariation.image);
       }
     }
-  }, [selectedColor, selectedSize, productData]);
+  }, [selectedColor, productData]);
 
   const handleColorChange = (color) => {
     setSelectedColor(color);
   };
 
-  const handleSizeChange = (size) => {
+  const handleSizeChange = (size) => {  
     setSelectedSize(size);
   };
 

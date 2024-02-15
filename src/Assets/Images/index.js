@@ -46,8 +46,8 @@ import WomenWhite24 from "../../AllImages/Men/img24.webp";
 import WomenPink25 from "../../AllImages/Men/img25.jpeg";
 import WomenGreen26 from "../../AllImages/Men/img26.jpeg";
 
-import WomenPink27 from "../../AllImages/Men/img27.webp";
-import WomenOrange28 from "../../AllImages/Men/img28.webp";
+import WomenPink27 from "../../AllImages/Men/img28.webp";
+import WomenOrange28 from "../../AllImages/Men/img27.webp";
 import WomenWhite29 from "../../AllImages/Men/img29.webp";
 
 import KidsBlue30 from "../../AllImages/Men/img30.webp";
