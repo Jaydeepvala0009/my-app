@@ -11,13 +11,10 @@ import {
 } from "../Assets/Icons/index";
 
 const ProductDetails = () => {
-
-
   const [productData, setProductData] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedSize, setSelectedSize] = useState(null);
   const [displayedImage, setDisplayedImage] = useState(null);
-
 
   useEffect(() => {
     const storedData = JSON.parse(localStorage.getItem("selectedProduct"));
@@ -39,7 +36,6 @@ const ProductDetails = () => {
     }
   }, []);
 
-
   useEffect(() => {
     if (productData && selectedColor && selectedSize) {
       const selectedVariation = productData.variations.find(
@@ -50,7 +46,7 @@ const ProductDetails = () => {
         setDisplayedImage(selectedVariation.image);
       }
     }
-  }, [selectedColor, productData]);
+  }, [selectedColor, selectedSize, productData]);
 
   const handleColorChange = (color) => {
     setSelectedColor(color);
@@ -60,7 +56,6 @@ const ProductDetails = () => {
     setSelectedSize(size);
   };
 
-  
   return (
     <>
       <Wrapper>
