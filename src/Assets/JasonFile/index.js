@@ -46,8 +46,6 @@ import {
   MenOrangek15,
 } from "../Images/index";
 
-
-
 export const Product = [
   {
     id: 1,
@@ -64,24 +62,18 @@ export const Product = [
     variations: [
       {
         color: "Brown",
-        sizes: [
-          { size: "S", image: MenBrown1 },
-          { size: "L", image: MenBrown1 },
-        ],
+        image: MenBrown1,
+        sizes: ["S", "M"],
       },
       {
         color: "Black",
-        sizes: [
-          { size: "S", image: MenBlack2 },
-          { size: "L", image: MenBlack2 },
-        ],
+        image: MenBlack2,
+        sizes: ["S", "L"],
       },
       {
         color: "White",
-        sizes: [
-          { size: "S", image: MenWhite3 },
-          { size: "L", image: MenWhite3 },
-        ],
+        image: MenWhite3,
+        sizes: ["S", "M", "L"],
       },
     ],
   },
@@ -95,24 +87,17 @@ export const Product = [
     image: WomenBrown19,
     rating: {
       rate: 3.2,
-      count: 240,
     },
     variations: [
       {
         color: "Brown",
-        sizes: [
-          { size: "S", image: WomenBrown19 },
-          { size: "M", image: WomenBrown19 },
-          { size: "L", image: WomenBrown19 },
-        ],
+        image: WomenBrown19,
+        sizes: ["S", "M", "L"],
       },
       {
         color: "Blue",
-        sizes: [
-          { size: "S", image: WomenBlue20 },
-          { size: "M", image: WomenBlue20 },
-          { size: "l", image: WomenBlue20 },
-        ],
+        image: WomenBlue20,
+        sizes: ["S", "L"],
       },
     ],
   },
@@ -126,32 +111,22 @@ export const Product = [
     image: KidsBlack34,
     rating: {
       rate: 5.3,
-      count: 300,
     },
     variations: [
       {
         color: "Black",
-        sizes: [
-          { size: "S", image: KidsBlack34 },
-          { size: "M", image: KidsBlack34 },
-          { size: "L", image: KidsBlack34 },
-        ],
+        image: KidsBlack34,
+        sizes: ["S", "M"],
       },
       {
         color: "Red",
-        sizes: [
-          { size: "S", image: KidsRed35 },
-          { size: "M", image: KidsRed35 },
-          { size: "L", image: KidsRed35 },
-        ],
+        image: KidsRed35,
+        sizes: ["S", "L"],
       },
       {
         color: "White",
-        sizes: [
-          { size: "S", image: KidsWhite36 },
-          { size: "M", image: KidsWhite36 },
-          { size: "L", image: KidsWhite36 },
-        ],
+        image: KidsWhite36,
+        sizes: ["S", "M", "L"],
       },
     ],
   },
@@ -164,33 +139,23 @@ export const Product = [
     category: "Women",
     image: WomenPink27,
     rating: {
-      rate: 3.8,
-      count: 70,
+      rate: 5.3,
     },
     variations: [
       {
         color: "Pink",
-        sizes: [
-          { size: "S", image: WomenPink27 },
-          { size: "M", image: WomenPink27 },
-          { size: "L", image: WomenPink27 },
-        ],
+        image: WomenPink27,
+        sizes: ["S", "M", "L", "X"],
       },
       {
         color: "Orange",
-        sizes: [
-          { size: "S", image: WomenOrange28 },
-          { size: "M", image: WomenOrange28 },
-          { size: "L", image: WomenOrange28 },
-        ],
+        image: WomenOrange28,
+        sizes: ["S", "L"],
       },
       {
         color: "White",
-        sizes: [
-          { size: "S", image: WomenWhite29 },
-          { size: "M", image: WomenWhite29 },
-          { size: "L", image: WomenWhite29 },
-        ],
+        image: WomenWhite29,
+        sizes: ["S", "M", "L"],
       },
     ],
   },
@@ -204,24 +169,17 @@ export const Product = [
     image: MenBlue12,
     rating: {
       rate: 5.0,
-      count: 200,
     },
     variations: [
       {
         color: "Blue",
-        sizes: [
-          { size: "S", image: MenBlue12 },
-          { size: "M", image: MenBlue12 },
-          { size: "L", image: MenBlue12 },
-        ],
+        image: MenBlue12,
+        sizes: ["S", "M", "L", "X"],
       },
       {
         color: "Orange",
-        sizes: [
-          { size: "S", image: MenOrange13 },
-          { size: "M", image: MenOrange13 },
-          { size: "L", image: MenOrange13 },
-        ],
+        image: MenOrange13,
+        sizes: ["S", "L"],
       },
     ],
   },
@@ -235,24 +193,17 @@ export const Product = [
     image: MenBlack14,
     rating: {
       rate: 3.2,
-      count: 100,
     },
     variations: [
       {
         color: "Black",
-        sizes: [
-          { size: "S", image: MenBlack14 },
-          { size: "M", image: MenBlack14 },
-          { size: "L", image: MenBlack14 },
-        ],
+        image: MenBlack14,
+        sizes: ["S", "M", "L"],
       },
       {
         color: "Orange",
-        sizes: [
-          { size: "S", image: MenOrangek15 },
-          { size: "M", image: MenOrangek15 },
-          { size: "L", image: MenOrangek15 },
-        ],
+        image: MenOrangek15,
+        sizes: ["S", "L"],
       },
     ],
   },
@@ -266,32 +217,22 @@ export const Product = [
     image: KidsBlack43,
     rating: {
       rate: 4.3,
-      count: 150,
     },
     variations: [
       {
         color: "Black",
-        sizes: [
-          { size: "S", image: KidsBlack43 },
-          { size: "M", image: KidsBlack43 },
-          { size: "L", image: KidsBlack43 },
-        ],
+        image: KidsBlack43,
+        sizes: ["S", "M", "L", "X"],
       },
       {
         color: "White",
-        sizes: [
-          { size: "S", image: KidsWhitw44 },
-          { size: "M", image: KidsWhitw44 },
-          { size: "L", image: KidsWhitw44 },
-        ],
+        image: KidsWhitw44,
+        sizes: ["S", "L"],
       },
       {
         color: "Red",
-        sizes: [
-          { size: "S", image: KidsRed45 },
-          { size: "M", image: KidsRed45 },
-          { size: "L", image: KidsRed45 },
-        ],
+        image: KidsRed45,
+        sizes: ["S", "M", "L"],
       },
     ],
   },
@@ -305,32 +246,22 @@ export const Product = [
     image: MenGreen4,
     rating: {
       rate: 4.9,
-      count: 150,
     },
     variations: [
       {
         color: "Green",
-        sizes: [
-          { size: "S", image: MenGreen4 },
-          { size: "M", image: MenGreen4 },
-          { size: "L", image: MenGreen4 },
-        ],
+        image: MenGreen4,
+        sizes: ["S", "M", "L", "X"],
       },
       {
         color: "Black",
-        sizes: [
-          { size: "S", image: MenBlack5 },
-          { size: "M", image: MenBlack5 },
-          { size: "L", image: MenBlack5 },
-        ],
+        image: MenBlack5,
+        sizes: ["S", "M", "L", "X"],
       },
       {
         color: "White",
-        sizes: [
-          { size: "S", image: MenWhite6 },
-          { size: "M", image: MenWhite6 },
-          { size: "L", image: MenWhite6 },
-        ],
+        image: MenWhite6,
+        sizes: ["S", "M", "L"],
       },
     ],
   },
@@ -344,24 +275,17 @@ export const Product = [
     image: WomenBlack21,
     rating: {
       rate: 5.2,
-      count: 340,
     },
     variations: [
       {
         color: "Black",
-        sizes: [
-          { size: "S", image: WomenBlack21 },
-          { size: "M", image: WomenBlack21 },
-          { size: "L", image: WomenBlack21 },
-        ],
+        image: WomenBlack21,
+        sizes: ["S", "M", "L"],
       },
       {
         color: "Blue",
-        sizes: [
-          { size: "S", image: WomenBlue22 },
-          { size: "M", image: WomenBlue22 },
-          { size: "L", image: WomenBlue22 },
-        ],
+        image: WomenBlue22,
+        sizes: ["S", "M", "L", "X"],
       },
     ],
   },
@@ -375,24 +299,17 @@ export const Product = [
     image: WomenBlack23,
     rating: {
       rate: 4.4,
-      count: 140,
     },
     variations: [
       {
         color: "Black",
-        sizes: [
-          { size: "S", image: WomenBlack23 },
-          { size: "M", image: WomenBlack23 },
-          { size: "L", image: WomenBlack23 },
-        ],
+        image: WomenBlack23,
+        sizes: ["S", "M"],
       },
       {
         color: "White",
-        sizes: [
-          { size: "S", image: WomenWhite24 },
-          { size: "M", image: WomenWhite24 },
-          { size: "L", image: WomenWhite24 },
-        ],
+        image: WomenWhite24,
+        sizes: ["S", "M", "L"],
       },
     ],
   },
@@ -406,24 +323,17 @@ export const Product = [
     image: WomenPink25,
     rating: {
       rate: 4.8,
-      count: 270,
     },
     variations: [
       {
         color: "Pink",
-        sizes: [
-          { size: "S", image: WomenPink25 },
-          { size: "M", image: WomenPink25 },
-          { size: "L", image: WomenPink25 },
-        ],
+        image: WomenPink25,
+        sizes: ["S", "M", "L"],
       },
       {
         color: "Green",
-        sizes: [
-          { size: "S", image: WomenGreen26 },
-          { size: "M", image: WomenGreen26 },
-          { size: "L", image: WomenGreen26 },
-        ],
+        image: WomenGreen26,
+        sizes: ["S", "M", "L"],
       },
     ],
   },
@@ -437,32 +347,22 @@ export const Product = [
     image: MenWhite9,
     rating: {
       rate: 4.5,
-      count: 100,
     },
     variations: [
       {
         color: "White",
-        sizes: [
-          { size: "S", image: MenWhite9 },
-          { size: "M", image: MenWhite9 },
-          { size: "L", image: MenWhite9 },
-        ],
+        image: MenWhite9,
+        sizes: ["S", "M", "L"],
       },
       {
         color: "Blue",
-        sizes: [
-          { size: "S", image: MenBlue10 },
-          { size: "M", image: MenBlue10 },
-          { size: "L", image: MenBlue10 },
-        ],
+        image: MenBlue10,
+        sizes: ["S", "M", "L", "x"],
       },
       {
         color: "Brown",
-        sizes: [
-          { size: "S", image: MenBrown11 },
-          { size: "M", image: MenBrown11 },
-          { size: "L", image: MenBrown11 },
-        ],
+        image: MenBrown11,
+        sizes: ["S", "M", "L", "x", "xxl"],
       },
     ],
   },
@@ -476,16 +376,12 @@ export const Product = [
     image: KidsBlue30,
     rating: {
       rate: 4.9,
-      count: 270,
     },
     variations: [
       {
         color: "Blue",
-        sizes: [
-          { size: "S", image: KidsBlue30 },
-          { size: "M", image: KidsBlue30 },
-          { size: "L", image: KidsBlue30 },
-        ],
+        image: KidsBlue30,
+        sizes: ["S", "M", "L"],
       },
     ],
   },
@@ -499,32 +395,22 @@ export const Product = [
     image: KidsWhite31,
     rating: {
       rate: 3.3,
-      count: 100,
     },
     variations: [
       {
         color: "White",
-        sizes: [
-          { size: "S", image: KidsWhite31 },
-          { size: "M", image: KidsWhite31 },
-          { size: "L", image: KidsWhite31 },
-        ],
+        image: KidsWhite31,
+        sizes: ["S", "M", "L", "x", "xxl"],
       },
       {
         color: "Black",
-        sizes: [
-          { size: "S", image: KidsBlack32 },
-          { size: "M", image: KidsBlack32 },
-          { size: "L", image: KidsBlack32 },
-        ],
+        image: KidsBlack32,
+        sizes: ["S", "M", "L", "x"],
       },
       {
         color: "Blue",
-        sizes: [
-          { size: "S", image: KidsBlue33 },
-          { size: "M", image: KidsBlue33 },
-          { size: "L", image: KidsBlue33 },
-        ],
+        image: KidsBlue33,
+        sizes: ["S", "M", "L", "x", "xxl"],
       },
     ],
   },
@@ -538,24 +424,17 @@ export const Product = [
     image: MenBlack7,
     rating: {
       rate: 3.9,
-      count: 110,
     },
     variations: [
       {
         color: "Black",
-        sizes: [
-          { size: "S", image: MenBlack7 },
-          { size: "M", image: MenBlack7 },
-          { size: "L", image: MenBlack7 },
-        ],
+        image: MenBlack7,
+        sizes: ["S", "M", "L", "x"],
       },
       {
         color: "White",
-        sizes: [
-          { size: "S", image: MenWhite8 },
-          { size: "M", image: MenWhite8 },
-          { size: "L", image: MenWhite8 },
-        ],
+        image: MenWhite8,
+        sizes: ["S", "M", "L", "x"],
       },
     ],
   },
@@ -569,32 +448,22 @@ export const Product = [
     image: KidsRed37,
     rating: {
       rate: 3.3,
-      count: 100,
     },
     variations: [
       {
         color: "Red",
-        sizes: [
-          { size: "S", image: KidsRed37 },
-          { size: "M", image: KidsRed37 },
-          { size: "L", image: KidsRed37 },
-        ],
+        image: KidsRed37,
+        sizes: ["S", "L", "x"],
       },
       {
         color: "Black",
-        sizes: [
-          { size: "S", image: KidsBlack38 },
-          { size: "M", image: KidsBlack38 },
-          { size: "L", image: KidsBlack38 },
-        ],
+        image: KidsBlack38,
+        sizes: ["S", "M", "L", "x"],
       },
       {
         color: "White",
-        sizes: [
-          { size: "S", image: KidsWhite39 },
-          { size: "M", image: KidsWhite39 },
-          { size: "L", image: KidsWhite39 },
-        ],
+        image: KidsWhite39,
+        sizes: ["S", "M", "L", "x", "xxl"],
       },
     ],
   },
@@ -608,32 +477,22 @@ export const Product = [
     image: KidsBlue40,
     rating: {
       rate: 5.3,
-      count: 300,
     },
     variations: [
       {
         color: "Blue",
-        sizes: [
-          { size: "S", image: KidsBlue40 },
-          { size: "M", image: KidsBlue40 },
-          { size: "L", image: KidsBlue40 },
-        ],
+        image: KidsBlue40,
+        sizes: ["S", "L", "x"],
       },
       {
         color: "Black",
-        sizes: [
-          { size: "S", image: KidsBlack41 },
-          { size: "M", image: KidsBlack41 },
-          { size: "L", image: KidsBlack41 },
-        ],
+        image: KidsBlack41,
+        sizes: ["S", "M", "L", "x"],
       },
       {
         color: "Orange",
-        sizes: [
-          { size: "S", image: KidsOrange42 },
-          { size: "M", image: KidsOrange42 },
-          { size: "L", image: KidsOrange42 },
-        ],
+        image: KidsOrange42,
+        sizes: ["S", "M", "L", "x", "xxl"],
       },
     ],
   },
@@ -647,32 +506,22 @@ export const Product = [
     image: WomenBrown16,
     rating: {
       rate: 4.2,
-      count: 140,
     },
     variations: [
       {
         color: "Brown",
-        sizes: [
-          { size: "S", image: WomenBrown16 },
-          { size: "M", image: WomenBrown16 },
-          { size: "L", image: WomenBrown16 },
-        ],
+        image: WomenBrown16,
+        sizes: ["S", "M", "L", "x"],
       },
       {
         color: "Black",
-        sizes: [
-          { size: "S", image: WomenBlack17 },
-          { size: "M", image: WomenBlack17 },
-          { size: "L", image: WomenBlack17 },
-        ],
+        image: WomenBlack17,
+        sizes: ["S", "M", "L", "x"],
       },
       {
         color: "White",
-        sizes: [
-          { size: "S", image: WomenWhite18 },
-          { size: "M", image: WomenWhite18 },
-          { size: "L", image: WomenWhite18 },
-        ],
+        image: WomenWhite18,
+        sizes: ["S", "M", "L", "x", "xxl"],
       },
     ],
   },

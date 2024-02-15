@@ -10,20 +10,22 @@ import {
   CiStar,
 } from "../Assets/Icons/index";
 
-import { filterProducts } from "../Redux/ProductFilterSlice";
-import { useDispatch } from "react-redux";
-
 const ProductDetails = () => {
-  const dispatch = useDispatch();
 
   const [productData, setProductData] = useState(null);
+  const [selectedColor, setSelectedColor] = useState(null);
+  const [selectedSize, setSelectedSize] = useState(null);
   const [displayedImage, setDisplayedImage] = useState(null);
+
+
 
   useEffect(() => {
     const storedData = JSON.parse(localStorage.getItem("selectedProduct"));
-    const storedDataHome = JSON.parse(localStorage.getItem("selectedProducthome"));
+    const storedDataHome = JSON.parse(
+      localStorage.getItem("selectedProducthome")
+    );
     const productType = localStorage.getItem("productType");
-  
+
     if (productType === "myproduct") {
       if (storedData) {
         setProductData(storedData);
@@ -36,21 +38,35 @@ const ProductDetails = () => {
       }
     }
   }, []);
-  
 
-  const handleColorClick = (color, image) => {
-    setDisplayedImage(image);
-    dispatch(filterProducts({ category: null, color }));
+
+  useEffect(() => {
+    if (productData && selectedColor) {
+      const selectedVariation = productData.variations.find(
+        (variation) => variation.color === selectedColor
+      );
+      if (selectedVariation) {
+        console.log("selectedVariation: ", selectedVariation);
+        setDisplayedImage(selectedVariation.image);
+      }
+    }
+  }, [selectedColor, productData]);
+
+  const handleColorChange = (color) => {
+    setSelectedColor(color);
+  };
+
+  const handleSizeChange = (size) => {
+    setSelectedSize(size);
   };
 
   
-
   return (
     <>
       <Wrapper>
-        {displayedImage && (
+        {productData && (
           <section
-            key={displayedImage.id}
+            key={productData.id}
             className="container-fluid Main-Product-Section"
           >
             <h1>Product Details</h1>
@@ -103,38 +119,60 @@ const ProductDetails = () => {
                   <div className="Main-Colors-Box">
                     <h5>Colors</h5>
                     {productData.variations.map((variation) => (
-                      <span
+                      <button
                         key={variation.color}
-                        className="mr-2"
                         style={{
-                          backgroundColor: variation.color.toLowerCase(),
-                          width: "20px",
-                          height: "20px",
-                          borderRadius: "50%",
-                          display: "inline-block",
-                          border: "1px solid #000",
+                          backgroundColor: variation.color,
+                          margin: "5px",
+                          width: "50px",
+                          height: "30px",
+                          border: "none",
+                          borderRadius: "5px",
                           cursor: "pointer",
                         }}
-                        onClick={() =>
-                          handleColorClick(
-                            variation.color,
-                            variation.sizes[0].image
-                          )
-                        }
-                      ></span>
+                        onClick={() => handleColorChange(variation.color)}
+                      ></button>
                     ))}
                   </div>
                   <div className="Main-Size-Box">
                     <h5>Sizes</h5>
                     <div className="Sizes-Box">
-                      <button className="Size-Button">S</button>
-                      <button className="Size-Button">M</button>
-                      <button className="Size-Button">L</button>
+                      {selectedColor &&
+                        productData.variations
+                          .find(
+                            (variation) => variation.color === selectedColor
+                          )
+                          .sizes.map((size) => (
+                            <button
+                              key={size}
+                              style={{
+                                margin: "5px",
+                                width: "50px",
+                                height: "30px",
+                                border: "none",
+                                borderRadius: "5px",
+                                cursor: "pointer",
+                              }}
+                              onClick={() => handleSizeChange(size)}
+                              disabled={
+                                !productData.variations
+                                  .find(
+                                    (variation) =>
+                                      variation.color === selectedColor
+                                  )
+                                  .sizes.includes(size)
+                              }
+                            >
+                              {size}
+                            </button>
+                          ))}
                     </div>
                   </div>
                   <button className="Button" type="button">
-                    <MdOutlineShoppingBag className="icon" />
-                    <h4>Add</h4>
+                    <button className="Button" type="button">
+                      <MdOutlineShoppingBag className="icon" />
+                      <h4>Add to Cart</h4>
+                    </button>
                   </button>
                   <div className="Discription">
                     <div className="Rating">
