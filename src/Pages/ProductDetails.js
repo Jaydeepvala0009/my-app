@@ -12,11 +12,11 @@ import {
 
 const ProductDetails = () => {
 
+
   const [productData, setProductData] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedSize, setSelectedSize] = useState(null);
   const [displayedImage, setDisplayedImage] = useState(null);
-
 
 
   useEffect(() => {
@@ -41,7 +41,7 @@ const ProductDetails = () => {
 
 
   useEffect(() => {
-    if (productData && selectedColor) {
+    if (productData && selectedColor && selectedSize) {
       const selectedVariation = productData.variations.find(
         (variation) => variation.color === selectedColor
       );
