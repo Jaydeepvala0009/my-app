@@ -61,6 +61,17 @@ const ProductDetails = () => {
     setSelectedSize(size);
   };
 
+
+  const handleAddToCart = () => {
+    if (productData && selectedColor && selectedSize) {
+      localStorage.setItem("productData", JSON.stringify(productData));
+      localStorage.setItem("selectedColor", JSON.stringify(selectedColor));
+      localStorage.setItem("selectedSize", JSON.stringify(selectedSize));
+    } else {
+      console.error("Product data, color, or size is missing.");
+    }
+  };
+  
   
   return (
     <>
@@ -170,7 +181,7 @@ const ProductDetails = () => {
                     </div>
                   </div>
                   <button className="Button" type="button">
-                    <button className="Button" type="button">
+                    <button className="Button" type="button" onClick={handleAddToCart}>
                       <MdOutlineShoppingBag className="icon" />
                       <h4>Add to Cart</h4>
                     </button>
