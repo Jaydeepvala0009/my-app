@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const Wrapper = styled.section`
   .Main-Navbar {
     .navbar {
@@ -15,12 +14,16 @@ export const Wrapper = styled.section`
         font-size: 28px;
         color: #a11967;
       }
+      .collapse {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+      }
     }
     .navbar-brand {
       display: flex;
     }
     .Main-ul {
-      margin-left: 25%;
       .nav-item {
         margin: 10px;
       }

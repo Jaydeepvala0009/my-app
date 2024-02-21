@@ -22,9 +22,9 @@ const ProductDetails = () => {
   useEffect(() => {
     setTimeout(() => {
       setloading(false);
-    }, 2000);
+    }, 3000);
   }, []);
-  
+
   useEffect(() => {
     if (
       productData &&
