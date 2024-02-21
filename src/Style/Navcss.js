@@ -14,11 +14,6 @@ export const Wrapper = styled.section`
         font-size: 28px;
         color: #a11967;
       }
-      .collapse {
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
-      }
     }
     .navbar-brand {
       display: flex;
@@ -27,6 +22,21 @@ export const Wrapper = styled.section`
       .nav-item {
         margin: 10px;
       }
+    }
+  }
+
+  @media only screen and (min-width: 992px) {
+    .collapse {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+  }
+  @media only screen and (max-width: 992px) {
+    .Main-ul {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
     }
   }
 `;

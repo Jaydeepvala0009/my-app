@@ -91,7 +91,7 @@ export const Product = [
       {
         color: "Brown",
         image: WomenBrown19,
-        sizes: ["S", "M",],
+        sizes: ["S", "M"],
       },
       {
         color: "Blue",

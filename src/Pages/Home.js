@@ -24,17 +24,16 @@ import FavoriteButton from "../Components/FavButton";
 const Home = () => {
   const dispatch = useDispatch();
 
-
   const handleProductClick = (selectedProduct) => {
     dispatch(setProduct(selectedProduct));
     localStorage.setItem("selectedProduct", JSON.stringify(selectedProduct));
-    localStorage.setItem("productType","myproduct");
+    localStorage.setItem("productType", "myproduct");
   };
 
   return (
     <>
       <Wrapper>
-        <section className="container-fluid Main-Section">
+        <section className="container-fluid Main-Section p-0">
           <section className="container-fluid Sub-Content-1">
             <div
               id="carouselExampleCaptions"
@@ -58,12 +57,7 @@ const Home = () => {
               </ol>
               <div className="carousel-inner">
                 <div className="carousel-item active">
-                  <img
-                    src={Bagroungimg1}
-                    style={{ width: "100%", height: "500px" }}
-                    className="d-block"
-                    alt="..."
-                  />
+                  <img src={Bagroungimg1} className="d-block" alt="..." />
                   <div className="carousel-caption d-none d-md-block">
                     <h5>First slide label</h5>
                     <p>
@@ -73,12 +67,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="carousel-item">
-                  <img
-                    src={Bagroungimg2}
-                    style={{ width: "100%", height: "500px" }}
-                    className="d-block"
-                    alt="..."
-                  />
+                  <img src={Bagroungimg2} className="d-block" alt="..." />
                   <div className="carousel-caption d-none d-md-block">
                     <h5>Second slide label</h5>
                     <p>
@@ -88,12 +77,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="carousel-item">
-                  <img
-                    src={Bagroungimg3}
-                    style={{ width: "100%", height: "500px" }}
-                    className="d-block"
-                    alt="..."
-                  />
+                  <img src={Bagroungimg3} className="d-block" alt="..." />
                   <div className="carousel-caption d-none d-md-block">
                     <h5>Third slide label</h5>
                     <p>
@@ -103,12 +87,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="carousel-item">
-                  <img
-                    src={Bagroungimg4}
-                    style={{ width: "100%", height: "500px" }}
-                    className="d-block"
-                    alt="..."
-                  />
+                  <img src={Bagroungimg4} className="d-block" alt="..." />
                   <div className="carousel-caption d-none d-md-block">
                     <h5>Third slide label</h5>
                     <p>
@@ -118,12 +97,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="carousel-item">
-                  <img
-                    src={Bagroungimg5}
-                    style={{ width: "100%", height: "500px" }}
-                    className="d-block"
-                    alt="..."
-                  />
+                  <img src={Bagroungimg5} className="d-block" alt="..." />
                   <div className="carousel-caption d-none d-md-block">
                     <h5>Third slide label</h5>
                     <p>
@@ -133,12 +107,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="carousel-item">
-                  <img
-                    src={Bagroungimg6}
-                    style={{ width: "100%", height: "500px" }}
-                    className="d-block"
-                    alt="..."
-                  />
+                  <img src={Bagroungimg6} className="d-block" alt="..." />
                   <div className="carousel-caption d-none d-md-block">
                     <h5>Third slide label</h5>
                     <p>
@@ -148,12 +117,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="carousel-item">
-                  <img
-                    src={Bagroungimg7}
-                    style={{ width: "100%", height: "500px" }}
-                    className="d-block"
-                    alt="..."
-                  />
+                  <img src={Bagroungimg7} className="d-block" alt="..." />
                   <div className="carousel-caption d-none d-md-block">
                     <h5>Third slide label</h5>
                     <p>
@@ -190,14 +154,9 @@ const Home = () => {
             </div>
           </section>
 
-          <section className="container-fluid Sub-Content-2">
+          <section className="Sub-Content-2 container-fluid">
             <div className="Main-Box">
-              <img
-                className="img"
-                src={BackFullimg1}
-                style={{ width: "100%", height: "800px" }}
-                alt=""
-              />
+              <img className="img" src={BackFullimg1} alt="" />
               <div className="Content-1">
                 <h1>Season of love</h1>
                 <h4>New lovely favs for your lil ones!</h4>
@@ -234,7 +193,7 @@ const Home = () => {
                       </div>
                     </NavLink>
                     <div className="Favicon">
-                      <FavoriteButton product={product}/>
+                      <FavoriteButton product={product} />
                     </div>
                   </div>
                 ))}

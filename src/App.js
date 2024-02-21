@@ -7,7 +7,6 @@ import Cart from "./Pages/Cart";
 import Footer from "./Components/Footer";
 import Myproduct from "./Pages/Myproduct";
 import ProductDetails from "./Pages/ProductDetails";
-import About from "./Pages/About";
 import FindStore from "./Pages/FindStore";
 import CustomerService from "./Pages/CustomerService";
 
@@ -18,7 +17,6 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="About" element={<About />} />
           <Route path="FindStore" element={<FindStore />} />
           <Route path="/CustomerService" element={<CustomerService />} />
           <Route path="Myproduct" element={<Myproduct />} />

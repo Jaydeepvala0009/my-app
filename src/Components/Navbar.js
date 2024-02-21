@@ -9,8 +9,6 @@ import {
   MdOutlineShoppingBag,
 } from "../Assets/Icons/index";
 
-
-
 const Navbar = () => {
   return (
     <>
@@ -43,11 +41,6 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="About">
-                    About
-                  </Link>
-                </li>
-                <li className="nav-item">
                   <Link className="nav-link" to="FindStore">
                     Find a Store
                   </Link>
@@ -59,7 +52,7 @@ const Navbar = () => {
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="#">
-                    Sign In
+                    Login
                   </Link>
                 </li>
               </ul>

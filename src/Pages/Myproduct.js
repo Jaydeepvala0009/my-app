@@ -63,7 +63,6 @@ const Myproduct = () => {
                   >
                     Kids
                   </Link>
-                  <Link className="nav-link text-dark ml-5">Baby</Link>
                   <Link className="nav-link text-dark ml-5">Sale</Link>
                 </div>
               </div>
