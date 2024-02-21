@@ -7,6 +7,7 @@ const Favourites = () => {
   const [favorites, setFavorites] = useState(
     JSON.parse(localStorage.getItem("favorites")) || []
   );
+
   const removeFav = (index) => {
     const updatedFavorites = [...favorites];
     updatedFavorites.splice(index, 1);
@@ -21,11 +22,11 @@ const Favourites = () => {
           <h1>Favourites</h1>
           <main className="Sub-Section">
             <div className="Items-Count">
-              <h4>0 Items</h4>
+              <h4>{favorites.length} Items</h4>
             </div>
             <section className="container-fluid Main-Card-Component">
               <div className="Main-Card row">
-                {favorites.map((favorites, id) => (
+                {favorites.map((favorites, id, index) => (
                   <div key={id} className="Card">
                     <div>
                       <img src={favorites.image} alt="..." />
@@ -33,15 +34,24 @@ const Favourites = () => {
                     <div className="Card-Body">
                       <p className="card-title">{favorites.title}</p>
                       <p className="card-title">Rs.{favorites.price}</p>
-                      <p className="card-title">Color :{favorites.color}</p>
-                      <div className="Size-List">
-                        <select className="Select">
-                          <option value="small">Small</option>
-                          <option value="medium">Medium</option>
-                          <option value="large">Large</option>
-                          <option value="extra-large">Extra Large</option>
-                        </select>
-                      </div>
+                      {favorites.variations &&
+                        favorites.variations.length >> 0 && (
+                          <p>Color: {favorites.variations[0].color}</p>
+                        )}
+                      {favorites.variations &&
+                        favorites.variations.length > 0 && (
+                          <div className="Size-List">
+                            <select className="Select">
+                              {favorites.variations[0].sizes.map(
+                                (size, sizes) => (
+                                  <option key={sizes} value={size}>
+                                    {size}
+                                  </option>
+                                )
+                              )}
+                            </select>
+                          </div>
+                        )}
                       <button type="button" className="Card-Button">
                         <AiOutlineShopping className="Icon" />
                         Add

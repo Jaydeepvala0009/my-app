@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import { MenBlack14 } from "../Assets/Images/index";
 
 import {
   IoIosHeart,
@@ -14,24 +13,18 @@ import {
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
-  console.log('cartItems: ', cartItems);
 
   useEffect(() => {
-    // Retrieve data from local storage
     const storedColor = JSON.parse(localStorage.getItem("selectedColor"));
     const storedSize = JSON.parse(localStorage.getItem("selectedSize"));
     const storedPrice = JSON.parse(localStorage.getItem("totalPrice"));
-
-    // Check if all necessary data is available
-    if (storedColor && storedSize && storedPrice) {
-      // Construct the cart item object
+    
+     if (storedColor && storedSize && storedPrice) {
       const cartItem = {
         color: storedColor,
         size: storedSize,
         price: storedPrice,
       };
-
-      // Update the cart items state
       setCartItems([cartItem]);
     }
   }, []);

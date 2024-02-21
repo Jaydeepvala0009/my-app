@@ -57,7 +57,6 @@ export const Product = [
     image: MenBrown1,
     rating: {
       rate: 3.9,
-      count: 120,
     },
     variations: [
       {
@@ -92,12 +91,12 @@ export const Product = [
       {
         color: "Brown",
         image: WomenBrown19,
-        sizes: ["S", "M", "L"],
+        sizes: ["S", "M",],
       },
       {
         color: "Blue",
         image: WomenBlue20,
-        sizes: ["S", "L"],
+        sizes: ["S", "M", "L"],
       },
     ],
   },

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 import {
   IoIosHeart,
@@ -11,15 +13,41 @@ import {
 } from "../Assets/Icons/index";
 
 const ProductDetails = () => {
-
-
   const [productData, setProductData] = useState(null);
-  const [selectedColor, setSelectedColor] = useState(null);
-  // eslint-disable-next-line
-  const [selectedSize, setSelectedSize] = useState(null);
-  const [displayedImage, setDisplayedImage] = useState(null);
+  const [selectedVariation, setSelectedVariation] = useState(null);
+  const [selectedSize, setSelectedSize] = useState("");
 
+  const [loading, setloading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setloading(false);
+    }, 2000);
+  }, []);
   
+  useEffect(() => {
+    if (
+      productData &&
+      productData.variations &&
+      productData.variations.length > 0
+    ) {
+      const defaultVariation = productData.variations[0];
+      setSelectedVariation(defaultVariation);
+      setSelectedSize(defaultVariation.sizes[0]);
+    }
+  }, [productData]);
+
+  const handleVariationSelect = (variation) => {
+    setSelectedVariation(variation);
+    setSelectedSize(variation.sizes[0]);
+  };
+
+  const handleSizeSelect = (size) => {
+    setSelectedSize(size);
+  };
+
+  console.log("selectedSize: ", selectedSize);
+
   useEffect(() => {
     const storedData = JSON.parse(localStorage.getItem("selectedProduct"));
     const storedDataHome = JSON.parse(
@@ -30,55 +58,20 @@ const ProductDetails = () => {
     if (productType === "myproduct") {
       if (storedData) {
         setProductData(storedData);
-        setDisplayedImage(storedData.image);
       }
     } else if (productType === "myproducthome") {
       if (storedDataHome) {
         setProductData(storedDataHome);
-        setDisplayedImage(storedDataHome.image);
       }
     }
   }, []);
 
-
-  useEffect(() => {
-    if (productData && selectedColor) {
-      const selectedVariation = productData.variations.find(
-        (variation) => variation.color === selectedColor
-      );
-      if (selectedVariation) {
-        console.log("selectedVariation: ", selectedVariation);
-        setDisplayedImage(selectedVariation.image);
-      }
-    }
-  }, [selectedColor, productData]);
-
-  const handleColorChange = (color) => {
-    setSelectedColor(color);
-  };
-
-  const handleSizeChange = (size) => {
-    setSelectedSize(size);
-  };
-
-
-  const handleAddToCart = () => {
-    if (productData && selectedColor && selectedSize) {
-      localStorage.setItem("productData", JSON.stringify(productData));
-      localStorage.setItem("selectedColor", JSON.stringify(selectedColor));
-      localStorage.setItem("selectedSize", JSON.stringify(selectedSize));
-    } else {
-      console.error("Product data, color, or size is missing.");
-    }
-  };
-  
-  
   return (
     <>
       <Wrapper>
-        {productData && (
+        {selectedVariation && (
           <section
-            key={productData.id}
+            key={selectedVariation.id}
             className="container-fluid Main-Product-Section"
           >
             <h1>Product Details</h1>
@@ -87,28 +80,44 @@ const ProductDetails = () => {
                 <section className="Sub-Section-1 col-xl-7">
                   <main className="Main-Boxes">
                     <div className="Box">
-                      <img
-                        className="images"
-                        src={displayedImage || productData.image}
-                        alt="Product"
-                      />
-                      <img
-                        className="images"
-                        src={displayedImage || productData.image}
-                        alt="Product"
-                      />
+                      {loading ? (
+                        <Skeleton width={300} height={345} />
+                      ) : (
+                        <img
+                          className="images"
+                          src={selectedVariation.image}
+                          alt="Product"
+                        />
+                      )}
+                      {loading ? (
+                        <Skeleton width={300} height={345} />
+                      ) : (
+                        <img
+                          className="images"
+                          src={selectedVariation.image}
+                          alt="Product"
+                        />
+                      )}
                     </div>
                     <div className="Box">
-                      <img
-                        className="images"
-                        src={displayedImage || productData.image}
-                        alt="Product"
-                      />
-                      <img
-                        className="images"
-                        src={displayedImage || productData.image}
-                        alt="Product"
-                      />
+                      {loading ? (
+                        <Skeleton width={300} height={345} />
+                      ) : (
+                        <img
+                          className="images"
+                          src={selectedVariation.image}
+                          alt="Product"
+                        />
+                      )}
+                      {loading ? (
+                        <Skeleton width={300} height={345} />
+                      ) : (
+                        <img
+                          className="images"
+                          src={selectedVariation.image}
+                          alt="Product"
+                        />
+                      )}
                     </div>
                   </main>
                 </section>
@@ -128,67 +137,56 @@ const ProductDetails = () => {
                       </h5>
                     </div>
                   </div>
-                  <div className="Main-Colors-Box">
-                    <h5>Colors</h5>
-                    {productData.variations.map((variation) => (
-                      <button
-                        key={variation.color}
-                        style={{
-                          backgroundColor: variation.color,
-                          margin: "5px",
-                          width: "50px",
-                          height: "30px",
-                          border: "none",
-                          borderRadius: "5px",
-                          cursor: "pointer",
-                        }}
-                        onClick={() => handleColorChange(variation.color)}
-                      ></button>
-                    ))}
-                  </div>
-                  <div className="Main-Size-Box">
-                    <h5>Sizes</h5>
-                    <div className="Sizes-Box">
-                      {selectedColor &&
-                        productData.variations
-                          .find(
-                            (variation) => variation.color === selectedColor
-                          )
-                          .sizes.map((size) => (
+
+                  <div className="Main-ColorSize-Box">
+                    <div className="Main-Colors">
+                      <h3>{selectedVariation.color}</h3>
+                      <div className="Colors">
+                        {productData &&
+                          productData.variations &&
+                          productData.variations.map((variation, index) => (
                             <button
-                              key={size}
-                              style={{
-                                margin: "5px",
-                                width: "50px",
-                                height: "30px",
-                                border: "none",
-                                borderRadius: "5px",
-                                cursor: "pointer",
-                              }}
-                              onClick={() => handleSizeChange(size)}
-                              disabled={
-                                !productData.variations
-                                  .find(
-                                    (variation) =>
-                                      variation.color === selectedColor
-                                  )
-                                  .sizes.includes(size)
-                              }
+                              className={`ColorSize-Button ${
+                                variation === selectedVariation
+                                  ? "selected"
+                                  : ""
+                              }`}
+                              key={index}
+                              onClick={() => handleVariationSelect(variation)}
+                            >
+                              {variation.color}
+                            </button>
+                          ))}
+                      </div>
+                    </div>
+                    <div className="Main-Sizes">
+                      <h4>Sizes:</h4>
+                      <h3>{selectedVariation.size}</h3>
+                      <div className="Size">
+                        {selectedVariation.sizes.map((size) => (
+                          <div key={size}>
+                            <button
+                              className={`ColorSize-Button ${
+                                size === selectedSize ? "selected" : ""
+                              }`}
+                              onClick={() => handleSizeSelect(size)}
                             >
                               {size}
                             </button>
-                          ))}
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
+
                   <button className="Button" type="button">
-                    <button className="Button" type="button" onClick={handleAddToCart}>
-                      <MdOutlineShoppingBag className="icon" />
-                      <h4>Add to Cart</h4>
-                    </button>
+                    <MdOutlineShoppingBag className="icon" />
+                    <h4>Add to Cart</h4>
                   </button>
                   <div className="Discription">
                     <div className="Rating">
                       <h4>(1000 revivews)</h4>
+                      <h6 className="mt-3">Rate : {productData.rating.rate}</h6>
                       <span>
                         <FaStar />
                         <FaStar />
@@ -258,53 +256,40 @@ export const Wrapper = styled.section`
             color: black;
           }
         }
-
-        .Main-Colors-Box {
-          margin: 0px;
-          text-align: start;
-          margin: 0 auto;
-          padding: 20px;
-
-          .Color-Box {
-            display: flex;
-            text-align: start;
-            gap: 35px;
-          }
-
-          .Main-Colors-Box {
-            margin: 0 auto;
-            padding: 20px;
-          }
-
-          .color-circle {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            margin-right: 10px;
-            cursor: pointer;
-          }
-
-          .color-circle.selected {
-            border: 2px solid black;
-          }
-        }
-
-        .Main-Size-Box {
+        .Main-ColorSize-Box {
           justify-content: space-between;
           text-align: start;
           margin: 0 auto;
           padding: 20px;
-
-          .Sizes-Box {
-            display: flex;
-            gap: 40px;
-            .Size-Button {
-              width: 50px;
-              border: none;
+          .Main-Colors {
+            text-align: start;
+            .Colors {
+              display: flex;
+              flex-direction: row;
+              gap: 20px;
             }
           }
+          .Main-Sizes {
+            text-align: start;
+            margin-top: 20px;
+            .Size {
+              display: flex;
+              gap: 20px;
+            }
+          }
+          .ColorSize-Button {
+            width: 80px;
+            height: 30px;
+            margin-top: 20px;
+            border: none;
+            background-color: white;
+            border: 1.5px solid rgba(0, 0, 0, 0.6);
+          }
+          .selected {
+            background-color: black;
+            color: white;
+          }
         }
-
         .Button {
           width: 95%;
           height: 50px;
@@ -316,6 +301,8 @@ export const Wrapper = styled.section`
           border: none;
           color: white;
           margin-left: 15px;
+          margin-top: 30px;
+
           font-size: 20px;
           gap: 5px;
 
