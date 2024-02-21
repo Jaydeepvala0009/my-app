@@ -23,47 +23,33 @@ const Myproduct = () => {
   return (
     <>
       <Wrapper>
-        <section className="container-fluid Main-Section">
+        <section className="Main-Section container-fluid">
           <section className="Sub-Section-1 container-fluid">
-            <nav className="navbar navbar-expand-lg navbar-light">
-              <button
-                className="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span className="navbar-toggler-icon"></span>
-              </button>
-              <div
-                className="collapse navbar-collapse Nav-main"
-                id="navbarNavAltMarkup"
-              >
-                <div className="navbar-nav">
+            <nav className="navbar">
+              <div className="Nav-Main">
+                <div className="Main-Nav-Link">
                   <Link
-                    className="nav-link text-dark ml-5"
+                    className="nav-link"
                     to="#"
                     onClick={() => handleFilter("men")}
                   >
-                    Men<span class="sr-only">(current)</span>
+                    Men
                   </Link>
                   <Link
-                    className="nav-link text-dark ml-5"
+                    className="nav-link"
                     to="#"
                     onClick={() => handleFilter("Women")}
                   >
                     Women
                   </Link>
                   <Link
-                    className="nav-link text-dark ml-5"
+                    className="nav-link"
                     to="#"
                     onClick={() => handleFilter("Kids")}
                   >
                     Kids
                   </Link>
-                  <Link className="nav-link text-dark ml-5">Sale</Link>
+                  <Link className="nav-link">Sale</Link>
                 </div>
               </div>
             </nav>
@@ -71,7 +57,7 @@ const Myproduct = () => {
 
           <section className="container-fluid Sub-Section-2">
             <section className="Section-1 row col-xl-12">
-              <main className="Main-1 col-xl-3">
+              <main className="Main-1 col-xl-3 col-lg-3 col-md-3">
                 <div className="Box-1 Boxes mt-4">
                   <h4>New Arrivals</h4>
                   <Link to="#">View All</Link>
@@ -111,10 +97,10 @@ const Myproduct = () => {
                   <br />
                 </div>
               </main>
-              <main className="Main-2 col-xl-9">
+              <main className="Main-2 col-xl-9 col-lg-9 col-md-9">
                 <div className="Section-2 row">
                   {filteredProducts.map((Product) => (
-                    <div key={Product.id} className="card ml-3">
+                    <div key={Product.id} className="card">
                       <NavLink
                         key={Product.id}
                         to={`/ProductDetails/${Product.id}`}
@@ -156,9 +142,22 @@ export const Wrapper = styled.section`
     align-items: center;
     text-align: center;
     .Sub-Section-1 {
-      .Nav-main {
+      .navbar {
         display: flex;
         justify-content: center;
+        align-items: center;
+        .Nav-Main {
+          .Main-Nav-Link {
+            display: flex;
+            .nav-link {
+              color: rgba(0, 0, 0, 0.5);
+              margin-left: 50px;
+              &:hover {
+                color: rgba(0, 0, 0, 0.7);
+              }
+            }
+          }
+        }
       }
     }
     .Sub-Section-2 {
