@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -11,28 +11,13 @@ import {
   FaCreditCard,
 } from "../Assets/Icons/index";
 
-const Cart = () => {
-  const [cartItems, setCartItems] = useState([]);
 
-  useEffect(() => {
-    const storedColor = JSON.parse(localStorage.getItem("selectedColor"));
-    const storedSize = JSON.parse(localStorage.getItem("selectedSize"));
-    const storedPrice = JSON.parse(localStorage.getItem("totalPrice"));
-    
-     if (storedColor && storedSize && storedPrice) {
-      const cartItem = {
-        color: storedColor,
-        size: storedSize,
-        price: storedPrice,
-      };
-      setCartItems([cartItem]);
-    }
-  }, []);
+const Cart = () => {
+
 
   return (
     <>
       <Wrapper>
-        {cartItems.map((item, index) => (
           <section className="container-fluid Main-Section text-center mt-5">
             <h1>Shopping bag</h1>
             <main className="Sub-Section row mt-5 col-xl-12">
@@ -40,13 +25,13 @@ const Cart = () => {
                 <div className="Main-Box">
                   <div className="Sub row">
                     <div className="Image-Box">
-                      <img className="img" src={item.image} alt="" />
+                      <img className="img" src={""} alt="" />
                     </div>
                     <div className="Sub-1">
                       <div className="Content-1 row">
                         <div className="Tittle">
                           <h5>Oversized Fit Printed hoodie</h5>
-                          <p>Rs.{item.price}</p>
+                          <p>Rs.{""}</p>
                         </div>
                         <div className="Delete-Icon">
                           <MdDelete />
@@ -174,7 +159,6 @@ const Cart = () => {
               </section>
             </main>
           </section>
-        ))}
       </Wrapper>
     </>
   );
