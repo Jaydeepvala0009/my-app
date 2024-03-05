@@ -16,7 +16,7 @@ const Navbar = () => {
         <section className="Main-Navbar">
           <nav className="navbar navbar-expand-lg navbar-light">
             <Link className="navbar-brand" to="/">
-              <h1>Shop Now</h1>
+              <h1>Shop Now jb vala</h1>
               <AiOutlineShopping className="Shop-icon" />
             </Link>
             <button
