@@ -59,7 +59,7 @@ const Home = () => {
                 <div className="carousel-item active">
                   <img src={Bagroungimg1} className="d-block" alt="..." />
                   <div className="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
+                    <h5>First slide label jb vala</h5>
                     <p>
                       Some representative placeholder content for the first
                       slide.
