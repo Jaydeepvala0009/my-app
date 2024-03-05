@@ -33,7 +33,7 @@ const Myproduct = () => {
                     to="#"
                     onClick={() => handleFilter("men")}
                   >
-                    Men Products
+                    Men
                   </Link>
                   <Link
                     className="nav-link"
